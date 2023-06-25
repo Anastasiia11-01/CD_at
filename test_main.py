@@ -1,4 +1,4 @@
-import main
+from main import app
 import pytest
 
 def test_index():
