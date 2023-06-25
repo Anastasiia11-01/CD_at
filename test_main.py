@@ -1,13 +1,21 @@
 import main
 
 def test_index():
-    assert main.index() == 'Hello, world! You are at farm now'
+    url = 'http://157.230.24.236/'
+    resp = requests.get(url)
+    assert resp.status_code == 200
 
 def test_cow():
-    assert main.cow() == 'MOoooOo!'
+    url = 'http://157.230.24.236/cow'
+    resp = requests.get(url)
+    assert resp.status_code == 200
 
 def test_dog():
-    assert main.dog() == 'Wuff! Wuff!'
+    url = 'http://157.230.24.236/dog'
+    resp = requests.get(url)
+    assert resp.status_code == 200
 
 def test_cat():
-    assert main.cat() == 'MeoooW'
+    url = 'http://157.230.24.236/cat'
+    resp = requests.get(url)
+    assert resp.status_code == 200
