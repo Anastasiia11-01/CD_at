@@ -6,6 +6,11 @@ on:
     workflows: ["Run Tests"]
     types:
       - completed
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
       
 jobs:  
   deploy:
