@@ -1,4 +1,4 @@
-import main
+from main import index, cow, dog, cat
 import pytest
 
 def test_index():
