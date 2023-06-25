@@ -24,3 +24,4 @@ jobs:
              key: ${{ secrets.SSHKEY }}
              port: ${{ secrets.PORT }}
              script: ls
+             run: main.py
