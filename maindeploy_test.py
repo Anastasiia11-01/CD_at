@@ -1,4 +1,4 @@
-import main
+from main import app
 
 def test_index():
     assert main.index() == 'Hello, world! You are at farm now'
