@@ -1,4 +1,4 @@
-name: Complete Tests and Deploy
+name: Complete Tests 
 
 on: push
 jobs:
@@ -17,19 +17,3 @@ jobs:
         run: pytest
 
 
-deploy:
-   runs-on: ubuntu-latest  
-   steps:
-       - name: Set up SSH
-         uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
-         with:
-            ssh-private-key: ${{ secrets.SSHKEY }}
-              
-       - name: Deploy app to droplet
-         uses: appleboy/ssh-action@v0.1.4
-         with:
-           host: ${{ secrets.HOST }}
-           username: ${{ secrets.USERNAME }}
-           key: ${{ secrets.SSHKEY }}
-           port: ${{ secrets.PORT }}
-           script: ls
