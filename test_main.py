@@ -1,4 +1,4 @@
-from main import app
+import main
 
 def test_index():
     url = 'http://157.230.24.236/'
