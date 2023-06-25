@@ -1,4 +1,4 @@
-name: Complete Tests
+name: Complete Tests and Deploy
 
 on: push
 jobs:
@@ -10,8 +10,26 @@ jobs:
       - name: Setup Python 3.11
         uses: actions/setup-python@v3
         with:
-          python-version: '3.11.0'
       - name: Install Dependencies
-        run: pip install -r requirements.txt
+         python-version: '3.11.0'
+         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest
+
+
+deploy:
+   runs-on: ubuntu-latest  
+   steps:
+       - name: Set up SSH
+         uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
+         with:
+            ssh-private-key: ${{ secrets.SSHKEY }}
+              
+       - name: Deploy app to droplet
+         uses: appleboy/ssh-action@v0.1.4
+         with:
+           host: ${{ secrets.HOST }}
+           username: ${{ secrets.USERNAME }}
+           key: ${{ secrets.SSHKEY }}
+           port: ${{ secrets.PORT }}
+           script: ls
