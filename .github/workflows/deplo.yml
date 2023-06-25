@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is deploying
 
 on:
   workflow_run:
-    workflows: ["Complete Tests"]
+    workflows: ["Run Tests"]
     types:
       - completed
       
