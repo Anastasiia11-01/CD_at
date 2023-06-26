@@ -23,7 +23,7 @@ jobs:
              known_hosts: ${{ secrets.KNOWN_HOSTS}}
              
          - name: Adding Known Hosts
-          run: ssh-keyscan -H ${{ secrets.SSH_HOST }}{% endraw%} >> ~/.ssh/authorized_keys
+          run: ssh-keyscan -H ${{ secrets.SSH_HOST }}{% endraw%} >> ~/.ssh/authorized_hosts
          
               
          - name: Deploy app to droplet
