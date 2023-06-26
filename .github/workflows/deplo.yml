@@ -24,9 +24,9 @@ jobs:
          - name: Deploy app to droplet
            uses: appleboy/ssh-action@v0.1.4
            with:
-             host: ${{ secrets.HOST }}
-             username: ${{ secrets.USERNAME }}
-             key: ${{ secrets.SSHKEY }}
-             port: ${{ secrets.PORT }}
-             script: ls
+            port: ${{ secrets.PORT }}
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.SSHKEY }}             
+            script: ls
        
