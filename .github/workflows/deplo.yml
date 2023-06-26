@@ -19,7 +19,8 @@ jobs:
          - name: Install SSH Key
            uses: shimataro/ssh-key-action@v2
            with:
-             key: ${{ secrets.SSH_PRIVATE_KEY }}
+             key: {%- raw -%} ${{ secrets.SSH_PRIVATE_KEY }}
+             known_hosts: ${{ secrets.KNOWN_HOSTS}}
          
               
          - name: Deploy app to droplet
