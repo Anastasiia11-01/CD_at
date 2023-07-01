@@ -15,6 +15,7 @@ jobs:
            uses: shimataro/ssh-key-action@v2
            with:
              key: ${{ secrets.SSH_PRIVATE_KEY }}
+             know_hosts: ${{secrets.KNOWN_HOSTS}}
                  
          - name: Deploy app to droplet
            uses: appleboy/ssh-action@v0.1.4
@@ -22,7 +23,8 @@ jobs:
              port: ${{ secrets.PORT }}
              host: ${{ secrets.SSH_HOST }}
              username: ${{ secrets.SSH_USER }}
-             key: ${{ secrets.SSH_PRIVATE_KEY }}             
+             key: ${{ secrets.SSH_PRIVATE_KEY }} 
+             know_hosts: ${{secrets.KNOWN_HOSTS}}
         
         
        
