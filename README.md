@@ -20,7 +20,7 @@
   - To understand the structure of .yml files, which became easier after reviewing other .yml files of other users. Also it took me a while to understand from where to take the
      'uses: actions/checkout@v3' part and it became clearer after checking with toutors.
 
- [#### Some thoughts to share]:
+ #### Some thoughts to share:
 
 > This was a very difficult assignment.
 > I felt like I've been left in a cold deep water without knowing how to swim. 
