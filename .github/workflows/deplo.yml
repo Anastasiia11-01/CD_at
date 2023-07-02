@@ -1,11 +1,10 @@
-name: Deploy
-run-name: ${{ github.actor }} is deploying
+name: Test and Deploy
+run-name: ${{ github.actor }} is deploying after testing
 
 on:
-  workflow_run:
-    workflows: ["Run Tests"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
       
 jobs:
 
