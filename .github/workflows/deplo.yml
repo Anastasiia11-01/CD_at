@@ -36,6 +36,12 @@ jobs:
              key: ${{ secrets.SSH_PRIVATE_KEY }} 
              script: |
                   pwd
+                  cd /home/farm-site
+                  git pull origin main
+                  systemctl restart farm-site
+                  systemctl status farm-site
+                  
+                  
              
         
         
