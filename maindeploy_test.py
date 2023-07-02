@@ -15,7 +15,9 @@ def test_dog():
     assert main.dog() == 'Wuff! Wuff!'
 
 def test_cat():
-    assert main.cat() == 'MeoooW
+    assert main.cat() == 'MeoooW'
+
+
 
 
 
