@@ -7,20 +7,35 @@ on:
     types:
       - completed
       
-jobs:  
+jobs:
+
+  run-tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11.0'
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
+        
   deploy:
+     needs: run-tests
      runs-on: ubuntu-latest  
-     steps:
-                   
-            
-                 
+     steps:                 
          - name: Deploy app to droplet
-           uses: appleboy/ssh-action@v0.1.4
+           uses: appleboy/ssh-action@master
            with:
              host: ${{ secrets.SSH_HOST }}
              port: ${{ secrets.PORT }}
              username: ${{ secrets.SSH_USER }}
              key: ${{ secrets.SSH_PRIVATE_KEY }} 
+             script: |
+                  pwd
              
         
         
